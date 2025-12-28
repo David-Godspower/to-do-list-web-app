@@ -106,13 +106,13 @@ input {
     color: #fff;
     font-weight: bold;
     border-radius: 15px;
-    background-color: aquamarine;
+    background: linear-gradient(360deg, orange, black);
     border: none;
     cursor: pointer;
 }
 
 .addBtn:hover {
-    background-color: blue;
+    background: linear-gradient(360deg, orange, coral);
 }
 
 ul {
@@ -193,10 +193,13 @@ footer p{
       font-size: 20px;
 }
 .icons{
-    font-size: 20px;
+    font-size: 25px;
     color: white;
+    margin: 0 10px;
+    gap:20px;
 }
-a{
+footer p a{
+    color: white;
     text-decoration: none;
     margin: 0 10px;
 }
