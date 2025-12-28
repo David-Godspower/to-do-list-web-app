@@ -1,18 +1,25 @@
-body{
+body {
     background: #fff;
-    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Added font */
 }
 
-.to-do{
-    min-width: 250px;
 
-    height: 500px;
+
+main {
+   flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.to-do {
+    width: 350px; /* Set a fixed width for better layout */
+    min-height: 500px;
     align-items: center;
     text-align: center;
     padding: 20px;
@@ -21,98 +28,216 @@ body{
     border: 2px solid green;
     border-radius: 20px;
     box-shadow: 10px 20px 10px rgba(0,0,0,0.5);
-    overflow: scroll;
+    overflow: auto; /* Changed scroll to auto */
 }
+.to-do-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.to-do-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.to-do-header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #fff;
+}
+.to-do-header p {
+    margin: 5px 0 0 0;
+    font-size: 18px;
+    color: #fff;
+}
+.to-do-input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.to-do-input-section input {
+    margin-right: 10px;
+}
+.to-do-list {
+    width: 100%;
+}
+.to-do-list ul {
+    padding: 0;
+}
+.to-do-list ul li {
+    padding: 10px;
+    font-size: 16px;
+}
+.to-do-list ul li.checked {
+    background: #4CAF50;
+}
+.to-do-list ul li.checked::before {
+    border-color: #fff;
+}
+.to-do-list ul li .close {
+    font-size: 20px;
+}
+.to-do-list ul li .close:hover {
+    background-color: #d32f2f;
+}
+
 
 label {
     font-size: 25px;
     font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
 }
+
 input {
-    width:350px;
-    height: 50px;
+    width: 80%; /* Changed to percentage to fit container */
+    height: 40px;
     border-radius: 10px;
+    border: none;
+    padding-left: 10px;
+    font-size: 16px;
 }
+
 .addBtn {
     margin: 15px;
     width: 150px;
     font-size: 20px;
     padding: 10px;
-    color:#fff;
+    color: #fff;
     font-weight: bold;
     border-radius: 15px;
     background-color: aquamarine;
+    border: none;
+    cursor: pointer;
 }
 
 .addBtn:hover {
-    background-color:blue;
+    background-color: blue;
 }
 
-
 ul {
-    margin:0;
-    padding:0;
-    left: 0;
+    margin: 0;
+    padding: 0;
     text-align: left;
+    margin-top: 20px;
 }
 
 /* Style the list items */
 ul li {
-  cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
-  list-style-type: none;
-  background: #eee;
-  font-size: 18px;
-  transition: 0.2s;
-  
-  /* make the list items unselectable */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    margin-bottom: 5px; /* Added spacing between items */
+    border-radius: 5px;
 }
 
-/* Set all odd list items to a different color (zebra-stripes) */
 ul li:nth-child(odd) {
-  background: #f9f9f9;
+    background: #f9f9f9;
 }
 
-/* Darker background-color on hover */
 ul li:hover {
-  background: #ddd;
+    background: #ddd;
 }
 
-/* When clicked on, add a background color and strike out text */
 ul li.checked {
-  background: red;
-  color: #fff;
-  text-decoration: line-through;
+    background: red;
+    color: #fff;
+    text-decoration: line-through;
 }
 
-/* Add a "checked" mark when clicked on */
 ul li.checked::before {
-  content: '';
-  position: absolute;
-  border-color: #fff;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
 }
 
-/* Style the close button */
 .close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px;
+    cursor: pointer;
 }
 
 .close:hover {
-  background-color: #f44336;
-  color: white;
+    background-color: #f44336;
+    color: white;
+    border-radius: 0 5px 5px 0;
 }
+
+/* Footer Styles */
+
+footer{
+    background: linear-gradient(to right, coral, orange);
+    bottom: 0;
+    left:0;
+    position:relative;
+    width:100%;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+footer p{
+      font-size: 20px;
+}
+.icons{
+    font-size: 20px;
+    color: white;
+}
+a{
+    text-decoration: none;
+    margin: 0 10px;
+}
+#linkedin:hover{
+    color:blue;
+}
+
+#x:hover{
+    color:black;
+}
+#facebook:hover{
+    color:blue;
+}
+#github:hover{
+    color:#4078c0 ;
+}
+#gmail:hover{
+    color: red;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .to-do {
+        width: 90%;
+        padding: 10px;
+    }
+    .to-do-header h1 {
+        font-size: 28px;
+    }
+    .to-do-header p {
+        font-size: 16px;
+    }
+    .to-do-input-section input {
+        width: 60%;
+    }
+    .addBtn {
+        width: 100px;
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+/* End of style.css */
+
